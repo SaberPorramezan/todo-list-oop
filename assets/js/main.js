@@ -220,8 +220,9 @@ class Storage {
       ];
       localStorage.setItem("settings", JSON.stringify(settings));
     }
-    selectSort.value = settings[0].sort;
-    selectFilter.value = settings[0].filter;
+    const [{filter, sort}] = settings;
+    selectFilter.value = filter;
+    selectSort.value = sort;
   }
   static saveNewSettings(e) {
     const settings = this.getSettings();
